@@ -1,0 +1,2 @@
+# QUERY SERVICE IMPLEMENTATION LAYER in /application/internal/queryservices
+This directory contains the implementation of query services that handle read operations for the application. Query services are responsible for retrieving data from the data source and returning it in a format suitable for the application's needs.

@@ -1,0 +1,2 @@
+# ENTITIES LAYER in /domain/models/entities
+The ENTITIES layer contains the core business objects of the application. These entities encapsulate the fundamental data and behavior that define the business domain. They are designed to be independent of any specific application logic or infrastructure concerns, allowing them to be reused across different parts of the system.

@@ -1,0 +1,2 @@
+# REPOSITORY IMPLEMENTATION LAYER in /infrastructure/persistence/repositories
+The REPOSITORY IMPLEMENTATION LAYER is responsible for providing concrete implementations of the repository interfaces defined in the domain layer. This layer interacts directly with the database or any other form of persistent storage to perform CRUD (Create, Read, Update, Delete) operations.

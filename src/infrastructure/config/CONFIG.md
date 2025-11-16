@@ -1,0 +1,2 @@
+# CONFIG LAYER in /infrastructure/config
+This layer manages the configuration settings and parameters for the application. It centralizes the configuration management, allowing for easy adjustments and environment-specific settings without modifying the core application code.

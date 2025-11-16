@@ -1,0 +1,2 @@
+# COMMAND SERVICE IMPLEMENTATION LAYER in /application/internal/commandservices
+This layer contains the concrete implementations of command services that handle the execution of commands, encapsulating business logic and coordinating interactions between domain services, repositories, and other components. It ensures that commands are processed according to the application's business rules and workflows.

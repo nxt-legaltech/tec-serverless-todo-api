@@ -1,0 +1,2 @@
+# ABSTRACT SERVICE LAYER in /domain/services
+This layer contains the abstract service definitions that encapsulate business logic and coordinate operations across multiple entities and repositories. It serves as an intermediary between the domain model and application layers, ensuring that business rules are consistently applied.

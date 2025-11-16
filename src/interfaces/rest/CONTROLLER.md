@@ -1,0 +1,2 @@
+# CONTROLLER LAYER in /interfaces/rest/controllers
+This layer contains the controller definitions for the REST API. Controllers handle incoming HTTP requests, process them (often by invoking application services), and return appropriate HTTP responses.
