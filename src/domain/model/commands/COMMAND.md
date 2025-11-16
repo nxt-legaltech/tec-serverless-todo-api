@@ -1,2 +1,0 @@
-# COMMAND LAYER in /domain/models/commands
-The Command Layer in the domain model is responsible for handling operations that change the state of the system. This layer encapsulates the business logic required to execute commands, ensuring that all necessary validations and rules are applied before any state changes occur.

@@ -1,2 +1,0 @@
-# ASSEMBLERS LAYER in /interfaces/rest/transfroms
-The ASSEMBLERS layer is responsible for transforming data between different representations, specifically for the REST interface. This layer ensures that data is correctly formatted and structured when being sent to or received from external clients.

@@ -1,2 +1,0 @@
-# RESOURCES LAYER in /interfaces/rest/resources
-This layer contains the resource definitions for the REST API. Each resource corresponds to a specific endpoint and defines the operations that can be performed on that endpoint.

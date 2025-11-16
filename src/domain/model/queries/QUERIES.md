@@ -1,2 +1,0 @@
-# QUERIES LAYER in /domain/models/queries
-This layer contains the query definitions and structures used to interact with the data storage or retrieval systems. It defines how data is fetched, filtered, and presented to the application.

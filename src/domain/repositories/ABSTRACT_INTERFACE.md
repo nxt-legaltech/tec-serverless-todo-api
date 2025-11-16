@@ -1,2 +1,0 @@
-# ABSTRACT INTERFACE LAYER in /domain/repositories
-This layer defines the abstract interfaces for repositories, specifying the contracts for data access and manipulation. It allows the domain model to remain decoupled from the underlying data storage implementations, promoting flexibility and testability.
