@@ -1,0 +1,13 @@
+{
+  "name": "tec-serverless-todo-api",
+  "version": "1.0.0",
+  "description": "AWS Lambda (Node.js + TypeScript) serverless API for managing to-do items stored in DynamoDB. Supports GET and POST operations, input validation, and structured error handling.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
