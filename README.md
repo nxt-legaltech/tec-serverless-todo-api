@@ -425,7 +425,7 @@ Access-Control-Allow-Origin: *
 ## Contributors
 
 <p align="justify">
-This project is developed and maintained by the NXT LegalTech team. We welcome contributions from developers who are passionate about building high-quality serverless applications. Whether you want to fix bugs, add new features, improve documentation, or suggest enhancements, your contributions are greatly appreciated!
+We welcome contributions from developers who are passionate about building high-quality serverless applications. Whether you want to fix bugs, add new features, improve documentation, or suggest enhancements, your contributions are greatly appreciated!
 </p>
 
 ### How to Contribute
