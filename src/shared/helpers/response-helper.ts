@@ -1,12 +1,12 @@
 import { APIGatewayProxyResult } from "aws-lambda";
 
 /**
- * Json Response for API Gateway
+ * Response for API Gateway
  * @param statusCode The HTTP status code for the response
  * @param body The body of the response, which will be JSON-stringified
  * @returns An APIGatewayProxyResult object
  */
-export const jsonResponse = (
+export const responseHelper = (
   statusCode: number,
   body: unknown
 ): APIGatewayProxyResult => ({

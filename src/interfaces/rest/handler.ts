@@ -1,7 +1,7 @@
 import { APIGatewayProxyEventV2, APIGatewayProxyResult } from "aws-lambda";
 
 import { createTodosController } from "@/composition-root";
-import { jsonResponse } from "@/interfaces/rest/api-response";
+import { responseHelper } from "@/shared/helpers/response-helper";
 import { AppError } from "@/domain/errors/app-error";
 
 const controller = createTodosController();
@@ -34,19 +34,19 @@ export const handler = async (
       return controller.createTodo(event);
     }
 
-    return jsonResponse(405, {
+    return responseHelper(405, {
       message: `Method ${method} not allowed`,
     });
   } catch (error) {
     console.error("Error handling request:", error);
 
     if (error instanceof AppError) {
-      return jsonResponse(error.statusCode, {
+      return responseHelper(error.statusCode, {
         message: error.message,
       });
     }
 
-    return jsonResponse(500, {
+    return responseHelper(500, {
       message: "Internal server error",
     });
   }

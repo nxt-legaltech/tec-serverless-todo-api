@@ -4,7 +4,7 @@ import { CreateTodoCommandHandler } from "@/application/internal/command-service
 import { GetTodosQueryHandler } from "@/application/internal/query-services/get-todos-query-handler";
 import { CreateTodoResource } from "@/interfaces/rest/resources/create-todo-resource";
 import { GetTodosQuery } from "@/domain/model/queries/get-todos-query";
-import { jsonResponse } from "@/interfaces/rest/api-response";
+import { responseHelper } from "@/shared/helpers/response-helper";
 import { TodoResourceFromEntityAssembler } from "./transforms/todo-resource-from-entity-assembler";
 import { CreateTodoCommandFromResourceAssembler } from "./transforms/create-todo-command-from-resource-assembler";
 import { AppError } from "@/domain/errors/app-error";
@@ -23,7 +23,7 @@ export class TodosController {
       TodoResourceFromEntityAssembler.toResourceFromEntity(todo)
     );
 
-    return jsonResponse(200, { items: resources });
+    return responseHelper(200, { items: resources });
   }
 
   async createTodo(
@@ -58,6 +58,6 @@ export class TodosController {
     const todoResource =
       TodoResourceFromEntityAssembler.toResourceFromEntity(todo);
 
-    return jsonResponse(200, { item: todoResource });
+    return responseHelper(200, { item: todoResource });
   }
 }
