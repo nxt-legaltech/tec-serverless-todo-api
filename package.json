@@ -4,10 +4,22 @@
   "description": "AWS Lambda (Node.js + TypeScript) serverless API for managing to-do items stored in DynamoDB. Supports GET and POST operations, input validation, and structured error handling.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc && tsc-alias",
+    "start": "node dist/interfaces/rest/handler.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.932.0",
+    "@aws-sdk/lib-dynamodb": "^3.932.0",
+    "tsconfig-paths": "^4.2.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.158",
+    "@types/node": "^24.10.1",
+    "tsc-alias": "^1.8.16",
+    "typescript": "^5.9.3"
+  }
 }
