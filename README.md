@@ -12,7 +12,7 @@ A serverless REST API built with AWS Lambda, Node.js, and TypeScript for managin
 The deployment process for the Serverless Todo API involves packaging the application code and deploying it to AWS using the AWS CLI. Below are the general steps to deploy the application:
 </p>
 
-[Deployment & Flow Preview](/docs/DEPLOYMENT_PROCESS.md)
+[SERVERLESS_API_REVIEW](/docs/SERVERLESS_API_REVIEW.md)
 
 ## Features
 
