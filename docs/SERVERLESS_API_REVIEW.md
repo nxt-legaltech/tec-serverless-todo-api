@@ -66,29 +66,7 @@ The core logic is implemented inside an AWS Lambda function using TypeScript, cl
 - `AWS_REGION`: AWS region where the resources are deployed (e.g., `us-east-1`)
 
 **Screenshots**
-
-## 3. API Gateway
-
 <p align="justify">
-An <strong>API Gateway (HTTP API)</strong> exposes the Lambda function to the internet through clean REST-like routes.
-</p>
-
-**Routes**
-
-- **GET** `/todos`: Invokes the Lambda function to retrieve all Todo items.
-- **POST** `/todos`: Invokes the Lambda function to create a new Todo item.
-
-**Integration**
-Both routes are integrated with the same Lambda function, which handles the routing logic based on the HTTP method. (`tec-serverless-todo-api`)
-
-**Invoke URL Example**
-
-```
-https://your-api-id.execute-api.your-region.amazonaws.com/todos
-```
-
-**Screenshots**
-<p>
 The following screenshots illustrate the deployment and configuration process of the Lambda function, including environment variables, IAM
 permissions, and test events.
 </p>
@@ -157,6 +135,68 @@ permissions, and test events.
   </tr>
 </table>
 
+## 3. API Gateway
+
+<p align="justify">
+An <strong>API Gateway (HTTP API)</strong> exposes the Lambda function to the internet through clean REST-like routes.
+</p>
+
+**Routes**
+
+- **GET** `/todos`: Invokes the Lambda function to retrieve all Todo items.
+- **POST** `/todos`: Invokes the Lambda function to create a new Todo item.
+
+**Integration**
+Both routes are integrated with the same Lambda function, which handles the routing logic based on the HTTP method. (`tec-serverless-todo-api`)
+
+**Invoke URL Example**
+
+```
+https://your-api-id.execute-api.your-region.amazonaws.com/todos
+```
+
+**Screenshots**
+<p align="justify">
+The following screenshots illustrate the step-by-step process of creating and configuring the API Gateway to expose the Lambda function.
+</p>
+
+<table>
+  <tr>
+    <td align="center" width="25%">
+      <strong>API Gateway Search</strong><br/>
+      <p align="justify"><em>Initial navigation step where the user searches for API Gateway in the AWS Console.</em></p><br/>
+      <img src="./screenshots/apigateway-search-service.png" width="260"/>
+    </td>
+    <td align="center" width="25%">
+      <strong>Create HTTP API</strong><br/>
+      <p align="justify"><em>Screen where the user selects the option to create an HTTP API, used to expose the Lambda function.</em></p><br/>
+      <img src="./screenshots/apigateway-create-http-api.png" width="260"/>
+    </td>
+    <td align="center" width="25%">
+      <strong>Configure Routes</strong><br/>
+      <p align="justify"><em>Definition of routes such as <code>GET /todos</code> and <code>POST /todos</code>, each mapped to the same Lambda function.</em></p><br/>
+      <img src="./screenshots/apigateway-configure-routes.png" width="260"/>
+    </td>
+    <td align="center" width="25%">
+      <strong>Review and Create</strong><br/>
+      <p align="justify"><em>Final review screen summarizing routing, integrations, and endpoint creation before deployment.</em></p><br/>
+      <img src="./screenshots/apigateway-review-and-create.png" width="260"/>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <strong>Route Details</strong><br/>
+      <p align="justify"><em>Detailed view of the created API routes, showing methods and paths configured for the Todo API.</em></p><br/>
+      <img src="./screenshots/apigateway-routes-details.png" width="260"/>
+    </td>
+    <td align="center">
+      <strong>Lambda Integration</strong><br/>
+      <p align="justify"><em>Integration screen showing how each route maps to the Lambda function, including version and invocation settings.</em></p><br/>
+      <img src="./screenshots/apigateway-integration-settings.png" width="260"/>
+    </td>
+  </tr>
+</table>
+
 ## 4. End-to-End Flow (Postman)
 
 ### GET /todos
@@ -209,43 +249,11 @@ Content-Type: application/json
 
 **Screenshots**
 <p>
-The following screenshots illustrate the end-to-end testing of the API using Postman, showcasing both GET and POST requests along with their respective responses.
+The following screenshots demonstrate successful tests of both the `POST /todos` and `GET /todos` routes via the API Gateway console.
 </p>
 
 <table>
   <tr>
-    <td align="center" width="25%">
-      <strong>API Gateway Search</strong><br/>
-      <p align="justify"><em>Initial navigation step where the user searches for API Gateway in the AWS Console.</em></p><br/>
-      <img src="./screenshots/apigateway-search-service.png" width="260"/>
-    </td>
-    <td align="center" width="25%">
-      <strong>Create HTTP API</strong><br/>
-      <p align="justify"><em>Screen where the user selects the option to create an HTTP API, used to expose the Lambda function.</em></p><br/>
-      <img src="./screenshots/apigateway-create-http-api.png" width="260"/>
-    </td>
-    <td align="center" width="25%">
-      <strong>Configure Routes</strong><br/>
-      <p align="justify"><em>Definition of routes such as <code>GET /todos</code> and <code>POST /todos</code>, each mapped to the same Lambda function.</em></p><br/>
-      <img src="./screenshots/apigateway-configure-routes.png" width="260"/>
-    </td>
-    <td align="center" width="25%">
-      <strong>Review and Create</strong><br/>
-      <p align="justify"><em>Final review screen summarizing routing, integrations, and endpoint creation before deployment.</em></p><br/>
-      <img src="./screenshots/apigateway-review-and-create.png" width="260"/>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <strong>Route Details</strong><br/>
-      <p align="justify"><em>Detailed view of the created API routes, showing methods and paths configured for the Todo API.</em></p><br/>
-      <img src="./screenshots/apigateway-routes-details.png" width="260"/>
-    </td>
-    <td align="center">
-      <strong>Lambda Integration</strong><br/>
-      <p align="justify"><em>Integration screen showing how each route maps to the Lambda function, including version and invocation settings.</em></p><br/>
-      <img src="./screenshots/apigateway-integration-settings.png" width="260"/>
-    </td>
     <td align="center">
       <strong>POST Success</strong><br/>
       <p align="justify"><em>Successful test of the <code>POST /todos</code> route, confirming proper invocation of the Lambda function.</em></p><br/>
