@@ -3,6 +3,7 @@ import { CreateTodoCommand } from "@/domain/model/commands/create-todo-command";
 import { Todo } from "@/domain/model/entities/todo";
 import { ICommandHandler } from "@/domain/services/i-command-handler";
 import { TodoRepository } from "@/domain/repositories/todo-repository";
+import { AppError } from "@/domain/errors/app-error";
 
 /**
  * Create Todo Command Handler
@@ -30,9 +31,16 @@ export class CreateTodoCommandHandler
    * @returns The newly created Todo item.
    */
   async handle(command: CreateTodoCommand): Promise<Todo> {
+    if (
+      typeof command.title !== "string" ||
+      command.title.trim().length === 0
+    ) {
+      throw new AppError("Field 'title' must be a non-empty string", 400);
+    }
+
     const todo = new Todo({
       id: randomUUID(),
-      title: command.title,
+      title: command.title.trim(),
       completed: false,
     });
 

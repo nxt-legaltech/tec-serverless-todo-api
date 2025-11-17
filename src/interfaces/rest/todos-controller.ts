@@ -9,13 +9,32 @@ import { TodoResourceFromEntityAssembler } from "./transforms/todo-resource-from
 import { CreateTodoCommandFromResourceAssembler } from "./transforms/create-todo-command-from-resource-assembler";
 import { AppError } from "@/domain/errors/app-error";
 
+/**
+ * Todos Controller
+ *
+ * @summary
+ * This controller handles HTTP requests related to Todo items, including
+ * retrieving the list of Todos and creating new Todo items.
+ *
+ * @description
+ * The TodosController class provides methods to handle incoming API Gateway
+ * requests for managing Todo items. It uses command and query handlers to
+ * process the business logic and returns appropriate HTTP responses.
+ */
 export class TodosController {
   constructor(
     private readonly createTodoHandler: CreateTodoCommandHandler,
     private readonly getTodosHandler: GetTodosQueryHandler
   ) {}
 
-  async getTodos(_event: APIGatewayProxyEventV2): Promise<APIGatewayProxyResult> {
+  /**
+   * Get Todos
+   * @param _event The API Gateway event
+   * @returns A promise that resolves to an API Gateway proxy result containing the list of Todos.
+   */
+  async getTodos(
+    _event: APIGatewayProxyEventV2
+  ): Promise<APIGatewayProxyResult> {
     const query: GetTodosQuery = {};
 
     const todos = await this.getTodosHandler.handle(query);
@@ -26,6 +45,11 @@ export class TodosController {
     return responseHelper(200, { items: resources });
   }
 
+  /**
+   * Create Todo
+   * @param event The API Gateway event
+   * @returns A promise that resolves to an API Gateway proxy result containing the newly created Todo item.
+   */
   async createTodo(
     event: APIGatewayProxyEventV2
   ): Promise<APIGatewayProxyResult> {
@@ -42,19 +66,13 @@ export class TodosController {
 
     const resource = payload as Partial<CreateTodoResource>;
 
-    if (
-      typeof resource.title !== "string" ||
-      resource.title.trim().length === 0
-    ) {
-      throw new AppError("Field 'title' must be a non-empty string", 400);
-    }
-
     const command =
       CreateTodoCommandFromResourceAssembler.toCommandFromResource({
-        title: resource.title.trim(),
+        title: resource.title ?? "",
       });
 
     const todo = await this.createTodoHandler.handle(command);
+
     const todoResource =
       TodoResourceFromEntityAssembler.toResourceFromEntity(todo);
 
